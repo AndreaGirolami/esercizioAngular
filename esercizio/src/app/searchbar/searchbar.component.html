@@ -1,0 +1,33 @@
+<div class="search-main">
+  <h1>find your restaurant</h1>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>restaurant</mat-label>
+      <input type="text" (input)="search($event.target.value)" />
+    </mat-form-field>
+  </form>
+</div>
+
+<div
+  style="
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-bottom: 20px;
+  "
+>
+  <ng-container *ngFor="let rist of posts?.array">
+    <mat-card class="example-card">
+      <img mat-card-image src="./assets/rist.jpg" />
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <div style="display: flex; flex-direction: column">
+          <p>{{ rist.restaurantName }}</p>
+          <p>{{ rist.phone }}</p>
+          <p>{{ rist.restaurantName }}</p>
+        </div>
+      </mat-card-header>
+
+      <mat-card-content> </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
